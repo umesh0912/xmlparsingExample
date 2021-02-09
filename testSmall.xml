@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      >
+    <bean id="entitlementList" class="com.test.common.EntitlementFactory$EntitlementList">
+        <property name="primaryEntitlement">
+        <list>       
+        <!-- Participants Open Starts here -->
+        <bean class="com.test.common.EntitlementFactory$PrimaryEntitlement">
+            <property name="methodName" value="AccountUICommand.openAccount"/>            
+            <property name="secondaryEntitlement">
+                <list>
+                    <bean class="com.test.common.EntitlementFactory$SecondaryEntitlement">
+                        <property name="methodName" value="SaveEnabled"/>                        
+						<property name="entitlement" value="com.test.systemdomain.common.DerivedFeatureEC.PARTICIPANT_MODIFY"/>
+                    </bean>
+                    <bean class="com.test.common.EntitlementFactory$SecondaryEntitlement">
+                        <property name="methodName" value="DeleteEnabled"/>
+                        <property name="featureName" value="com.test.systemdomain.common.FeatureName.DELETE_ACCOUNT"/>						
+                    </bean>
+                    <bean class="com.test.common.EntitlementFactory$SecondaryEntitlement">
+                        <property name="methodName" value="NewEnabled"/>                        
+						<property name="entitlement" value="com.test.systemdomain.common.DerivedFeatureEC.PARTICIPANT_ADD"/>
+                    </bean>
+                    <bean class="com.test.common.EntitlementFactory$SecondaryEntitlement">
+                        <property name="methodName" value="ReadOnly"/>                        
+						<property name="entitlement" value="com.test.systemdomain.common.DerivedFeatureEC.PARTICIPANT_READONLY"/>
+                    </bean>
+                    <bean class="com.test.common.EntitlementFactory$SecondaryEntitlement">
+                        <property name="methodName" value="PreviewEnabled"/>                        
+						<property name="entitlement" value="com.test.systemdomain.common.DerivedFeatureEC.PARTICIPANT_MODIFY"/>
+                    </bean>
+                                                                                <bean class="com.test.common.EntitlementFactory$SecondaryEntitlement">
+                        <property name="methodName" value="SaveEnabled"/>                        
+						<property name="entitlement" value="com.test.systemdomain.common.DerivedFeatureEC.PARTICIPANT_MODIFY"/>
+                    </bean>
+                    <bean class="com.test.common.EntitlementFactory$SecondaryEntitlement">
+                        <property name="methodName" value="DeleteEnabled"/>
+                        <property name="featureName" value="com.test.systemdomain.common.FeatureName.DELETE_ACCOUNT"/>						
+                    </bean>
+                    <bean class="com.test.common.EntitlementFactory$SecondaryEntitlement">
+                        <property name="methodName" value="NewEnabled"/>                        
+						<property name="entitlement" value="com.test.systemdomain.common.DerivedFeatureEC.PARTICIPANT_ADD"/>
+                    </bean>
+                    <bean class="com.test.common.EntitlementFactory$SecondaryEntitlement">
+                        <property name="methodName" value="ReadOnly"/>                        
+						<property name="entitlement" value="com.test.systemdomain.common.DerivedFeatureEC.PARTICIPANT_READONLY"/>
+                    </bean>
+                    <bean class="com.test.common.EntitlementFactory$SecondaryEntitlement">
+                        <property name="methodName" value="PreviewEnabled"/>                        
+						<property name="entitlement" value="com.test.systemdomain.common.DerivedFeatureEC.PARTICIPANT_MODIFY"/>
+                    </bean>
+                    <bean class="com.test.common.EntitlementFactory$SecondaryEntitlement">
+                        <property name="methodName" value="SaveEnabled"/>                        
+						<property name="entitlement" value="com.test.systemdomain.common.DerivedFeatureEC.PARTICIPANT_MODIFY"/>
+                    </bean>
+                    <bean class="com.test.common.EntitlementFactory$SecondaryEntitlement">
+                        <property name="methodName" value="DeleteEnabled"/>
+                        <property name="featureName" value="com.test.systemdomain.common.FeatureName.DELETE_ACCOUNT"/>						
+                    </bean>
+                    <bean class="com.test.common.EntitlementFactory$SecondaryEntitlement">
+                        <property name="methodName" value="NewEnabled"/>                        
+						<property name="entitlement" value="com.test.systemdomain.common.DerivedFeatureEC.PARTICIPANT_ADD"/>
+                    </bean>
+                    <bean class="com.test.common.EntitlementFactory$SecondaryEntitlement">
+                        <property name="methodName" value="ReadOnly"/>                        
+						<property name="entitlement" value="com.test.systemdomain.common.DerivedFeatureEC.PARTICIPANT_READONLY"/>
+                    </bean>
+                    <bean class="com.test.common.EntitlementFactory$SecondaryEntitlement">
+                        <property name="methodName" value="PreviewEnabled"/>                        
+						<property name="entitlement" value="com.test.systemdomain.common.DerivedFeatureEC.PARTICIPANT_MODIFY"/>
+                    </bean>                    
+				</list>
+			</property>
+			<property name="entitlementMode">
+            <list>
+                      <bean class="com.test.common.EntitlementFactory$EntitlementMode">
+                        <property name="mode" value="open"/>
+	                    <property name="modeEntitlement" value="com.test.systemdomain.common.DerivedFeatureEC.OPEN_PARTICIPANT"/>
+	                </bean>	                
+            </list>
+            </property> 
+         </bean>
+         <!-- Participants new Starts here -->                    
+         <bean class="com.test.common.EntitlementFactory$PrimaryEntitlement">
+            <property name="methodName" value="AccountUICommand.newAccount"/>
+            <property name="secondaryEntitlement">
+                <list>
+                    <bean class="com.test.common.EntitlementFactory$SecondaryEntitlement">
+                        <property name="methodName" value="SaveEnabled"/>                        
+						<property name="entitlement" value="com.test.systemdomain.common.DerivedFeatureEC.PARTICIPANT_ADD"/>
+                    </bean>
+				</list>
+			</property>
+            <property name="entitlementMode">
+              <list>
+                   <bean class="com.test.common.EntitlementFactory$EntitlementMode">
+                        <property name="mode" value="new"/>
+	                    <property name="modeEntitlement" value="com.test.systemdomain.common.DerivedFeatureEC.PARTICIPANT_ADD"/>
+	               </bean>
+             </list>
+            </property>			
+         </bean>   
+         <!-- Participants Save Starts here -->         
+         <bean class="com.test.common.EntitlementFactory$PrimaryEntitlement">
+            <property name="methodName" value="AccountUICommand.saveAccount"/>            
+            <property name="entitlementMode">
+                <list>
+                    <bean class="com.test.common.EntitlementFactory$EntitlementMode">
+                        <property name="mode" value="new"/>
+	                    <property name="modeEntitlement" value="com.test.systemdomain.common.DerivedFeatureEC.PARTICIPANT_ADD"/>
+	                </bean>
+                    <bean class="com.test.common.EntitlementFactory$EntitlementMode">
+                        <property name="mode" value="open"/>
+                        <property name="modeEntitlement" value="com.test.systemdomain.common.DerivedFeatureEC.PARTICIPANT_MODIFY"/>
+	                </bean>
+	             </list>
+            </property>
+            <!--  <property name="secondaryEntitlement">
+                <list>
+                    <bean class="com.test.common.EntitlementFactory$SecondaryEntitlement">
+                        <property name="methodName" value="SaveEnabled"/>
+                        <property name="featureName" value="PARTICIPANT_MODIFY"/>
+						<property name="entitlement" value="com.test.systemdomain.common.DerivedFeatureEC.PARTICIPANT_ADD"/>
+                    </bean>
+				</list>
+				</property>
+				-->
+         </bean>
+         <bean class="com.test.common.EntitlementFactory$PrimaryEntitlement">
+            <property name="methodName" value="AccountUICommand.deleteAccount"/>            
+            <property name="entitlementMode">
+            <list>
+                   <bean class="com.test.common.EntitlementFactory$EntitlementMode">
+                        <property name="mode" value="open"/>
+	                    <property name="modeFeatureName" value="com.test.systemdomain.common.FeatureName.DELETE_ACCOUNT"/>
+	               </bean>
+             </list>
+             </property>
+         </bean>
+         <!-- Participant Tax Election Changes Starts here-->
+         <bean class="com.test.common.EntitlementFactory$PrimaryEntitlement">
+            <property name="methodName" value="TaxElectionsApproveRejectGroupUICommand.submitTaxElectionsApproveRejectGroup"/>
+            <property name="entitlementMode">
+                <list>
+                    <bean class="com.test.common.EntitlementFactory$EntitlementMode">
+                        <property name="mode" value="open"/>
+                        <property name="modeEntitlement" value="com.test.systemdomain.common.DerivedFeatureEC.PARTICIPANT_TAX_ELECTIONS"/>
+	                </bean>
+	             </list>
+            </property>
+         </bean>
+         <bean class="com.test.common.EntitlementFactory$PrimaryEntitlement">
+            <property name="methodName" value="TaxElectionsResetGroupUICommand.submitTaxElectionsResetGroup"/>
+            <property name="entitlementMode">
+                <list>
+                    <bean class="com.test.common.EntitlementFactory$EntitlementMode">
+                        <property name="mode" value="open"/>
+                        <property name="modeEntitlement" value="com.test.systemdomain.common.DerivedFeatureEC.PARTICIPANT_TAX_ELECTIONS"/>
+	                </bean>
+	             </list>
+            </property>
+         </bean>         
+         <!-- Participant Tax Election Changes End -->
+         <!-- Participants LOA open Starts here -->
+        <bean class="com.test.common.EntitlementFactory$PrimaryEntitlement">
+            <property name="methodName" value="LeaveOfAbsenceUICommand.open"/>            
+            <property name="secondaryEntitlement">
+                <list>
+                    <bean class="com.test.common.EntitlementFactory$SecondaryEntitlement">
+                        <property name="methodName" value="SaveEnabled"/>
+						<property name="entitlement" value="com.test.component.entitlement.DerivedFeatureLOAOpen.DerivedFeatureEC_LOA_OPEN"/>
+                    </bean>
+                    <bean class="com.test.common.EntitlementFactory$SecondaryEntitlement">
+                        <property name="methodName" value="DeleteEnabled"/>
+                        <property name="featureName" value="com.test.systemdomain.common.FeatureName.DELETE_ACCOUNT"/>						
+                    </bean>
+					<bean class="com.test.common.EntitlementFactory$SecondaryEntitlement">
+	                      <property name="methodName" value="NewEnabled"/> <!-- this is for enabling of Save & Next button -->
+						<property name="entitlement" value="com.test.component.entitlement.DerivedFeatureLOAOpen.DerivedFeatureEC_LOA_OPEN"/>
+                    </bean>
+
+				</list>
+			</property>
+			<property name="entitlementMode">
+            <list>
+                      <bean class="com.test.common.EntitlementFactory$EntitlementMode">
+                        <property name="mode" value="open"/>
+	                    <property name="modeEntitlement" value="com.test.component.entitlement.DerivedFeatureLOAOpen.DerivedFeatureEC_LOA_OPEN"/>
+	                </bean>
+            </list>
+            </property>
+         </bean>
+	
+   	    </list>
+   	  </property>   
+   </bean>
+   
+ 
+	
+</beans>
